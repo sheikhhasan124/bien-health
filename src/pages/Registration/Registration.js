@@ -1,28 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialAuth from '../SocialAuth/SocialAuth';
 import auth from '../../firebase_init';
-import { async } from '@firebase/util';
+
 
 
 const Registration = () => {
+     const [agree, setAgree]=useState(false)
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-
-     const navigate = useNavigate()
+      const navigate = useNavigate()
+      let errorElement;
+       if(error){
+            errorElement = <p className="text-danger">Error:{error?.message}</p>
+          }
+     
+   
     const handleFormSubmit= async(event)=>{
         event.preventDefault()
         const name = event.target.name.value;
-        const email = event.target.name.value;
-        const password = event.target.name.value;
-       await createUserWithEmailAndPassword(email, password)
-        // Navigate('/')
-        // console.log(name, email)
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+      
+        createUserWithEmailAndPassword(email,password)
+        navigate('/')
+        // console.log(name,email,password)
     }
     return (
         <div className='form-section'>
@@ -40,11 +47,12 @@ const Registration = () => {
                         <input type="password" name="password" id="" placeholder='Password' required/>
                     </div>
                     <div className='mb-3'>
-                    <input type="checkbox" name="terms" id="" />
-                    <label htmlFor="terms">Accept all conditions</label>
+                    <input onClick={()=>setAgree(!agree)} type="checkbox" name="terms" id="" />
+                    <label className={`${agree? '': 'text-danger'}`} htmlFor="terms">Accept all conditions</label>
                     </div>
-                    <input className='submit-btn' type="submit" value="Register" />
+                    <input disabled={!agree} className='submit-btn' type="submit" value="Register" />
               </form>
+               <p>{errorElement}</p>
               <p>All ready have an account <Link className='form-link' to="/login">Please login</Link></p>
                <div className="form-horizontal">
                   <div className='hr'> </div>
