@@ -1,0 +1,16 @@
+.service-section{
+    margin:100px 0;
+
+}
+.service-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0 5px;
+}
+.service-header{
+    font-size: 50px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 40px;
+}

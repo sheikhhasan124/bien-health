@@ -1,0 +1,49 @@
+[
+    {
+        "id":1,
+        "name":"Eye Surgery",
+        "price":"500",
+        "desc":"LASIK eye surgery is the best known and most commonly performed laser refractive surgery to correct vision problems. Laser-assisted in situ keratomileusis (LASIK) can be an alternative to glasses or contact lenses",
+        "img":"https://i.ibb.co/2N8VFFz/eye.jpg"
+    },
+    {
+        "id":2,
+        "name":"Pulmonary",
+        "price":"1000",
+        "desc":"There's no cure for pulmonary hypertension, but treatment is available to help improve signs and symptoms and slow the progress of the disease",
+        "img":"https://i.ibb.co/PmgxxRF/pulmonary.jpg"
+    },
+    {
+        "id":3,
+        "name":"Cardiology",
+        "price":"5000",
+        "desc":"A cardiologist is a healthcare provider who can treat chest pain, high blood pressure and heart failure, as well as problems with your heart valves",
+        "img":"https://i.ibb.co/5rVvnkt/cardiology.jpg"
+    },
+    {
+        "id":4,
+        "name":"Dental care",
+        "price":"400",
+        "desc":"Dental care or dentalcare is the maintenance of healthy teeth and may refer to: Oral hygiene, the practice of keeping the mouth and teeth clean in order to prevent dental disorders",
+        "img":"https://i.ibb.co/YWHg4V1/dental.jpg"
+    },
+    {
+        "id":5,
+        "name":"Joint injection",
+        "price":"100",
+        "desc":"Hydrocortisone injections are used to treat swollen or painful joints, such as after an injury or if you have arthritis",
+        "img":"https://i.ibb.co/yktQZNh/joint.jpg"
+    },
+    {
+        "id":6,
+        "name":"Lips Botox",
+        "price":"300",
+        "desc":"Botox typically lasts for approximately three months, but the lip flips don't last as long for a few reasons. For one, the lip flip involves injections to a muscle that we constantly move throughout the day",
+        "img":"https://i.ibb.co/NVnFgNc/lips.jpg"
+    }
+]
+
+
+
+
+
