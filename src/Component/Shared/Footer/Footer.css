@@ -1,0 +1,29 @@
+.footer-container{
+    background-color: #304356;
+    padding: 100px 50px;
+    color: rgb(192, 192, 192);
+}
+.footer-info .title{
+    margin: 35px 0;
+    font-size: 20px;
+}
+.colore-white{
+    color: white;
+}
+.pages button{
+    border: none;
+    display: block;
+    background: none;
+    color:rgb(192, 192, 192);
+    margin-bottom: 10px;
+}
+.pages button:hover{
+    color: gray;
+}
+@media screen and (min-width:700px){
+    .footer-info{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  
+        grid-gap: 20px; 
+    }
+}

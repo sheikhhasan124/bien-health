@@ -1,11 +1,60 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
     const date = new Date();
     const year = date.getFullYear();
     return (
-        <div>
-            <h1>foooter {year}</h1>
+        <div className='footer-container'>
+            <div className="footer-info">
+             <div>
+                <h3 className='title colore-white'>BIEN HEALTH</h3>
+                <p>Consulting WP - Before we talk destination, we shine a spotlight across your organization to fully understand its people, processes, and technology.</p>
+            </div>
+            <div className="pages">
+                <h3 className='title  colore-white'>PAGES</h3>
+                <button>HOME</button>
+                <button>SERVICES</button>
+                <button>APPOINTMENT</button>
+                <button>ABOUT</button>
+                <button>BLOG</button> 
+            </div>
+            <div className="recent-news">
+                <div>
+                    <h3 className='title  colore-white'>RECENT NEWS</h3>
+                    <p>VIEW ALL</p>
+                    <h6 className='colore-white'>Ultrasmall nanoparticles kill cancer cells in unusual way</h6>
+                    <div className="date">
+                        {}
+                        <span>{}</span>
+                    </div>
+                </div>
+                <div className="hr"></div>
+                <div>
+                    
+                    <h6 className='colore-white'>Sense of smell may predict Alzheimers risk</h6>
+                    <div className="date">
+                        {}
+                        <span>{}</span>
+                    </div>
+                </div>
+            </div>
+            <div className="newsLetter">
+                <h3 className='title  colore-white'>NEWSLETTER</h3>
+                <p>Recieve our latest news straight to your inbox</p>
+                <input type="text" placeholder='Email adderess' />
+                <button>SUBSCRIBE</button>
+            </div>
+            </div>
+            <div className="hr"></div>
+            <div>
+                <p><small>All right reserved by {year} Bien Health.</small></p>
+                <div className="social-icon">
+                    <button>fa</button>
+                    <button>twi</button>
+                    <button>ins</button>
+                </div>
+            </div>
         </div>
     );
 };
