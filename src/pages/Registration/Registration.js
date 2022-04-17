@@ -1,16 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../../imges/Google.svg'
-import { FaGithub } from "react-icons/fa";
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import SocialAuth from '../SocialAuth/SocialAuth';
+import auth from '../../firebase_init';
+import { async } from '@firebase/util';
 
 
 const Registration = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+     const navigate = useNavigate()
+    const handleFormSubmit= async(event)=>{
+        event.preventDefault()
+        const name = event.target.name.value;
+        const email = event.target.name.value;
+        const password = event.target.name.value;
+       await createUserWithEmailAndPassword(email, password)
+        // Navigate('/')
+        // console.log(name, email)
+    }
     return (
         <div className='form-section'>
              <div className='form-container'>
            <div>
            <h2 className='form-title'>Register</h2>
-              <form>
+              <form onSubmit={handleFormSubmit}>
                     <div className="input-group">
                        <input type="text" name="name" id="" placeholder='Name' required />
                     </div>
@@ -20,7 +39,11 @@ const Registration = () => {
                     <div className="input-group">
                         <input type="password" name="password" id="" placeholder='Password' required/>
                     </div>
-                    <input className='submit-btn' type="submit" value="Login" />
+                    <div className='mb-3'>
+                    <input type="checkbox" name="terms" id="" />
+                    <label htmlFor="terms">Accept all conditions</label>
+                    </div>
+                    <input className='submit-btn' type="submit" value="Register" />
               </form>
               <p>All ready have an account <Link className='form-link' to="/login">Please login</Link></p>
                <div className="form-horizontal">
@@ -28,14 +51,7 @@ const Registration = () => {
                   <p>or</p>
                   <div className='hr'> </div>
                </div>
-                <div>
-                    <button className="google-btn"> 
-                      <img className='mb-2 pe-2' src={Logo} alt="" />
-                     <p>Continue with Google</p></button>
-                </div>
-                <div>
-                    <button className="google-btn"> <span className='mb-3 pe-2'><FaGithub/></span> <p>Continue with Github</p></button>
-                </div>
+               <SocialAuth/>
            </div>
         </div>
         </div>

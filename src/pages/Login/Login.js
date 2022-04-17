@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../../imges/Google.svg'
 import { FaGithub } from "react-icons/fa";
 import './Login.css'
+import SocialAuth from '../SocialAuth/SocialAuth';
 
 const Login = () => {
     return (
@@ -23,19 +24,13 @@ const Login = () => {
                     
               </form>
               <p>New to Bien-Health? <Link className='form-link' to="/registration">create an account</Link></p>
+              <p>Forget password? <span className="text-danger">Reset Password</span></p>
                <div className="form-horizontal">
                   <div className='hr'> </div>
                   <p>or</p>
                   <div className='hr'> </div>
                </div>
-                <div>
-                    <button className="google-btn"> 
-                      <img className='mb-2 pe-2' src={Logo} alt="" />
-                     <p>Continue with Google</p></button>
-                </div>
-                <div>
-                    <button className="google-btn"> <span className='mb-3 pe-2'><FaGithub/></span> <p>Continue with Github</p></button>
-                </div>
+               <SocialAuth/>
            </div>
         </div>
         </div>
