@@ -1,9 +1,13 @@
 import React from 'react';
+import { FaFacebookSquare,FaTwitterSquare ,FaInstagramSquare,FaClock} from "react-icons/fa";
+
+
 import './Footer.css'
 
 const Footer = () => {
     const date = new Date();
     const year = date.getFullYear();
+    const today = date.toLocaleDateString() 
     return (
         <div className='footer-container'>
             <div className="footer-info">
@@ -25,8 +29,8 @@ const Footer = () => {
                     <p>VIEW ALL</p>
                     <h6 className='colore-white'>Ultrasmall nanoparticles kill cancer cells in unusual way</h6>
                     <div className="date">
-                        {}
-                        <span>{}</span>
+                         <span className='me-2'><FaClock></FaClock></span>
+                        <span>{today}</span>
                     </div>
                 </div>
                 <div className="hr"></div>
@@ -34,25 +38,27 @@ const Footer = () => {
                     
                     <h6 className='colore-white'>Sense of smell may predict Alzheimers risk</h6>
                     <div className="date">
-                        {}
-                        <span>{}</span>
+                         <span className='me-2'><FaClock></FaClock></span>
+                        <span>{today}</span>
                     </div>
                 </div>
             </div>
             <div className="newsLetter">
                 <h3 className='title  colore-white'>NEWSLETTER</h3>
                 <p>Recieve our latest news straight to your inbox</p>
+              
                 <input type="text" placeholder='Email adderess' />
                 <button>SUBSCRIBE</button>
+                
             </div>
             </div>
             <div className="hr"></div>
-            <div>
+            <div className='footer-social'>
                 <p><small>All right reserved by {year} Bien Health.</small></p>
                 <div className="social-icon">
-                    <button>fa</button>
-                    <button>twi</button>
-                    <button>ins</button>
+                    <button><FaFacebookSquare></FaFacebookSquare></button>
+                    <button><FaTwitterSquare/></button>
+                    <button><FaInstagramSquare/></button>
                 </div>
             </div>
         </div>
