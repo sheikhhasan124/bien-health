@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Header.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import auth from '../../../firebase_init';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -12,9 +13,9 @@ const Header = () => {
     }
     return (
     <div>
-       <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
+       <Navbar  collapseOnSelect expand="lg" bg="primary" className='navbar' variant="dark">
          <Container>
-            <Navbar.Brand as={Link}  to="/">Bien Health</Navbar.Brand>
+            <Navbar.Brand className='nav-header' as={Link}  to="/">Bien Health</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
