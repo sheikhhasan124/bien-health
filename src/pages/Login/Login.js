@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import Logo from '../../imges/Google.svg'
-import { FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css'
 import SocialAuth from '../SocialAuth/SocialAuth';
 import auth from '../../firebase_init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { async } from '@firebase/util';
 
 const Login = () => {
     const emailRef = useRef('')
@@ -33,6 +34,16 @@ const Login = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password)
     }
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
+    const resetPassword = async()=>{
+        const email = emailRef.current.value;
+        if(email){
+            await sendPasswordResetEmail(email)
+            toast('Email sent')
+        }else{
+            toast('please send valid email')
+        }
+    }
     return (
         <div className='form-section'>
              <div className='form-container'>
@@ -52,13 +63,14 @@ const Login = () => {
               </form>
               <p>{errorElement}</p>
               <p>New to Bien-Health? <Link className='form-link' to="/registration">create an account</Link></p>
-              <p>Forget password? <span className="text-danger">Reset Password</span></p>
+              <p>Forget password?  <span onClick={resetPassword} className="text-danger">Reset Password</span></p>
                <div className="form-horizontal">
                   <div className='hr'> </div>
                   <p>or</p>
                   <div className='hr'> </div>
                </div>
                <SocialAuth/>
+               <ToastContainer />
            </div>
         </div>
         </div>
