@@ -17,11 +17,11 @@ const Footer = () => {
             </div>
             <div className="pages">
                 <h3 className='title  colore-white'>PAGES</h3>
-                {/* <button>HOME</button>
+                <button>HOME</button>
                 <button>SERVICES</button>
                 <button>APPOINTMENT</button>
                 <button>ABOUT</button>
-                <button>BLOG</button>  */}
+                <button>BLOG</button> 
             </div>
             <div className="recent-news">
                 <div>

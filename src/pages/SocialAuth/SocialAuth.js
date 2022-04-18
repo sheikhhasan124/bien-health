@@ -6,8 +6,13 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const SocialAuth = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    let errorElement;
+       if(error){
+            errorElement = <p className="text-danger">Error:{error?.message}</p>
+          }
     return (
         <div>
+            <p>{errorElement}</p>
              <div>
                     <button onClick={()=>{signInWithGoogle()}} className="google-btn"> 
                       <img className='mb-2 pe-2' src={Logo} alt="" />
