@@ -7,11 +7,13 @@ import Home from './pages/Home/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import NotFound from './pages/NotFound/NotFound';
 
-import Blog from './pages/Blog/Blog';
+import Blogs from './pages/Blogs/Blogs';
 import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
 import Booking from './pages/Booking/Booking';
 import RequirAuth from './pages/Login/RequirAuth/RequirAuth';
+import About from './pages/About/About';
+
 
 
 
@@ -27,7 +29,8 @@ const App = () => {
                    <Booking/>
                </RequirAuth>
                }></Route>
-               <Route path='/blog' element={<Blog/>}></Route>
+               <Route path='/blog' element={<Blogs/>}></Route>
+               <Route path='/about' element={<About/>}></Route>
                <Route path='/login' element={<Login/>}></Route>
                <Route path='/registration' element={<Registration/>}></Route>
                <Route path='*' element={<NotFound/>}></Route>
