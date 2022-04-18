@@ -1,0 +1,19 @@
+.not-found{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+.not-found p:first-child{
+    font-size: 70px;
+    color: tomato;
+
+}
+.not-found button{
+    background-color: rgb(5, 146, 146);
+    padding: 10px 60px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
