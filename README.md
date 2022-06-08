@@ -1,6 +1,14 @@
 # welcome to health bien  
 [live site link](https://facebook.com)
 ### what feature has there  
+
+- A react client site website, It has a banner and service
+- Main focus on react-route.
+- Email Password, and google sign in, log out system.
+- Authentication by firebase.
+
+
+## mode detailes
 - Navbar  
 - banner  
 - service card with booking button which are going a protected route  
